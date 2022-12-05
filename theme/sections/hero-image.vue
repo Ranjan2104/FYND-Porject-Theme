@@ -108,12 +108,12 @@
             "default": "",
             "label": "Redirect Link"
         },
-        {
-            "type": "text",
-            "id": "button_text",
-            "default": "Shop Now",
-            "label": "Button Text"
-        },
+          {
+              "type": "text",
+              "id": "button_text",
+              "default": "Shop Now",
+              "label": "Button Text"
+          },
         {
             "type": "checkbox",
             "id": "full_width",

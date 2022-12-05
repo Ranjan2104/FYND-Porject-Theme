@@ -29,7 +29,7 @@ import * as component14 from './testimonials.vue';
 {"name":"media_with_text","label":"Media with text","component": components[10].default},
 {"name":"product-description","label":"Product Description","component": components[11].default},
 {"name":"product-description2","label":"Product Description2","component": components[12].default},
-{"component": components[13].default},
+{"name":"product-showcase","label":"Product Showcase","component": components[13].default},
 {"name":"testimonials","label":"Testimonial","component": components[14].default}
             ];
             }

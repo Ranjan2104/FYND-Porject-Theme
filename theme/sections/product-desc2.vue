@@ -124,12 +124,9 @@
         padding-left: 32px;
     }
     @media screen and (max-width: 480px) {
-      width: 0%;
-      margin-right: 330px;
+      width: auto;
+      margin-right: auto;
     }
-    // @media @large-1280 {
-    //   flex: 0 0 100%;
-    // }
   }
 
   &__content {
@@ -141,10 +138,7 @@
     flex-direction: column;
     line-height: 35px;
     box-sizing: border-box;
-
-    @media screen and (max-width: 768px) {
     
-    }
     @media screen and (max-width: 480px) {
       padding-left: 25px;
     }

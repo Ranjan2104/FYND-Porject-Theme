@@ -55,10 +55,44 @@
   /deep/ .fy__img {
     width: 100%;
     @media @mobile{
-      display: none;
+      display: flex;
     }
   }
 }
+.hero__image::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-color);
+  animation: b-ltr-before 1.5s cubic-bezier(0, 0, 0, 0) forwards;
+  background-color: white;
+}
+.hero__image:nth-of-type(1)::before,
+.hero__image:nth-of-type(1)::after {
+    animation-delay: 0.5s;
+}
+
+@keyframes b-ltr-after {
+    0% {
+        transform: translateY(-100%)
+    }
+
+    100% {
+        transform: translateY(101%)
+    }
+}
+
+@keyframes b-ltr-before {
+    0% {
+        transform: translateY(0)
+    }
+
+    100% {
+        transform: translateY(-200%)
+    }
+}
+
 .overlay {
   position: absolute;
   top: 55%;

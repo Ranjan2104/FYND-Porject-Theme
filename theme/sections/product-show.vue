@@ -46,20 +46,10 @@
       "label": "Mirror layout"
     },
     {
-      "type": "select",
-      "id": "styleV",
-      "options": [
-          {
-              "value": "style1",
-              "text": "Product t1"
-          },
-          {
-              "value": "style2",
-              "text": "Style 2"
-          }
-      ],
-      "default": "style1",
-      "label": "Layout"
+      "type": "product",
+      "id": "styleV", 
+      "default": "",
+      "label": "Select Product"
     },
     {
       "type": "range",
@@ -89,18 +79,6 @@
       "id": "button_text",
       "default": "Shop Now",
       "label": "Button Text"
-    },
-    {
-      "type": "image_picker",
-      "id": "image",
-      "default": "",
-      "label": "Select Image"
-    },
-    {
-      "type": "image_picker",
-      "id": "image2",
-      "default": "",
-      "label": "Select Image"
     }
   ]
 }
@@ -238,7 +216,9 @@ export default {
     },
   },
   directives: {},
-  mounted() {},
+  mounted() {
+    console.log("texttt",this.settings)
+  },
   beforeDestroy() {},
 };
 </script>

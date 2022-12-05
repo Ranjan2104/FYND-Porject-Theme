@@ -11,8 +11,9 @@ import * as component8 from './image-gallery.vue';
 import * as component9 from './image-slideshow.vue';
 import * as component10 from './media-with-text.vue';
 import * as component11 from './product-desc.vue';
-import * as component12 from './product-show.vue';
-import * as component13 from './testimonials.vue';
+import * as component12 from './product-desc2.vue';
+import * as component13 from './product-show.vue';
+import * as component14 from './testimonials.vue';
             function exportComponents(components) {
             return [
                 {"name":"application_banner","label":"Application Banner","component": components[0].default},
@@ -27,9 +28,10 @@ import * as component13 from './testimonials.vue';
 {"name":"image_slideshow","label":"Image Slideshow","component": components[9].default},
 {"name":"media_with_text","label":"Media with text","component": components[10].default},
 {"name":"product-description","label":"Product Description","component": components[11].default},
-{"component": components[12].default},
-{"name":"testimonials","label":"Testimonial","component": components[13].default}
+{"name":"product-description2","label":"Product Description2","component": components[12].default},
+{"component": components[13].default},
+{"name":"testimonials","label":"Testimonial","component": components[14].default}
             ];
             }
-            export default exportComponents([component0,component1,component2,component3,component4,component5,component6,component7,component8,component9,component10,component11,component12,component13]);
+            export default exportComponents([component0,component1,component2,component3,component4,component5,component6,component7,component8,component9,component10,component11,component12,component13,component14]);
             

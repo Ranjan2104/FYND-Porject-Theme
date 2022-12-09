@@ -402,7 +402,7 @@ export default {
       }
       return brand?.banners?.portrait?.url;
     },
-    loadMoreData() {
+    loadMoreData() {  
       let options = {
         department: "",
         image_size: "large",

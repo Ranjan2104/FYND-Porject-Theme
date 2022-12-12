@@ -122,6 +122,7 @@
         flex: 0 0 50%;
         width: 50%;
         padding-left: 32px;
+        padding-top: 18px;
     }
     @media screen and (max-width: 480px) {
       width: auto;
@@ -357,8 +358,16 @@
     .image-section {
       img {
         height: 564px;
+        @media screen and (max-width: 768px) {
+          height: 244px;
+          padding-bottom: 210px
+        }
+        @media @mobile {
+          height: 240px;
+          padding-bottom: 0px
+        }
       }
-    }
+  }
 }
 
 </style>

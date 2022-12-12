@@ -329,6 +329,7 @@ export default {
       this.$apiSDK.catalog.getProductDetailBySlug(option).then((data) => {
         console.log("data", data);
         this.img = [...data.medias];
+        console.log("img", this.img);
       });
     }
   },

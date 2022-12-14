@@ -10,16 +10,26 @@
     <div :class="['image-section-first']">
       <emerge-img :src="this.img[0].url" />
     </div>
+
     <div :class="['image-section-second-M']">
-      <emerge-img :src="this.img[2].url" />
+      <ul>
+        <li v-for="items in this.img" :key="items">
+          <emerge-img :src="items.url" />
+        </li>
+      </ul>
     </div>
 
     <div :class="['media-with-text__content']">
       <div :class="['image-section-first-M']">
         <emerge-img :src="this.img[0].url" />
       </div>
+
       <div :class="['image-section-second']">
-        <emerge-img :src="this.img[2].url" />
+          <ul>
+            <li v-for="items in this.img" :key="items">
+              <emerge-img :src="items.url" />
+            </li>
+          </ul>
       </div>
       <div class="media-with-text__content--main">
         {{ settings.props.productName.value }}
@@ -148,6 +158,67 @@
       align-self: baseline;
       padding-top:35px ;
     }
+
+    // animation part
+    .image-section-second-M {
+          width: 261px;
+          height: 359px;
+          overflow: hidden;
+          position: relative;
+          float: left;
+          // margin: 25px;
+          box-sizing: border-box;
+      }
+    .image-section-second-M picture {
+        width: 100%;
+      }
+    .image-section-second-M ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        float: left;
+      }
+    .image-section-second-M ul li {
+        display: inline-block;
+        width: 25%;
+        height: 361px;
+        opacity: 0;
+        // -webkit-transition: 300ms;
+        transition: 600ms;
+      }
+    .image-section-second-M ul li:before {
+        content: "";
+        width: 0%;
+        height: 2px;
+        background: #000;
+        position: absolute;
+        bottom: 0;
+        margin-left: 12.5%;
+        -webkit-transition: 300ms;
+        transition: 300ms;
+        z-index: 2;
+      }
+    .image-section-second-M ul li:first-child {
+        opacity: 1;
+      }
+    .image-section-second-M ul li:hover {
+        opacity: 1;
+      }
+    .image-section-second-M ul li:hover:before {
+        width: 25%;
+        margin-left: 0%;
+      }
+    .image-section-second-M ul li picture {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        pointer-events: none;
+      }
   }
   @media screen and (max-width: 480px) {
     flex-direction: column;
@@ -159,6 +230,67 @@
       width: 320px;
       margin-left: 25px;
     }
+
+    // animation part
+    .image-section-second-M {
+          width: 320px;
+          height: 418px;
+          overflow: hidden;
+          position: relative;
+          float: left;
+          // margin: 25px;
+          box-sizing: border-box;
+      }
+    .image-section-second-M picture {
+        width: 100%;
+      }
+    .image-section-second-M ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        float: left;
+      }
+    .image-section-second-M ul li {
+        display: inline-block;
+        width: 25%;
+        height: 420px;
+        opacity: 0;
+        // -webkit-transition: 300ms;
+        transition: 600ms;
+      }
+    .image-section-second-M ul li:before {
+        content: "";
+        width: 0%;
+        height: 2px;
+        background: #000;
+        position: absolute;
+        bottom: 0;
+        margin-left: 12.5%;
+        -webkit-transition: 300ms;
+        transition: 300ms;
+        z-index: 2;
+      }
+    .image-section-second-M ul li:first-child {
+        opacity: 1;
+      }
+    .image-section-second-M ul li:hover {
+        opacity: 1;
+      }
+    .image-section-second-M ul li:hover:before {
+        width: 25%;
+        margin-left: 0%;
+      }
+    .image-section-second-M ul li picture {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        pointer-events: none;
+      }
   }
 
   &__content {
@@ -180,10 +312,128 @@
       padding-left: 25px;
     }
 
+    //   .image-section-second {
+    //     .image-wrapper {
+    //       width: 320px;
+    //       height: 415px;
+    //       overflow: hidden;
+    //       position: relative;
+    //       float: left;
+    //       // margin: 25px;
+    //       box-sizing: border-box;
+    //   }
+    //   .image-wrapper picture {
+    //     width: 100%;
+    //   }
+    //   .image-wrapper ul {
+    //     list-style: none;
+    //     margin: 0;
+    //     padding: 0;
+    //     width: 100%;
+    //     height: 100%;
+    //     position: relative;
+    //     float: left;
+    //   }
+    //   .image-wrapper ul li {
+    //     display: inline-block;
+    //     width: 25%;
+    //     height: 420px;
+    //     opacity: 0;
+    //     -webkit-transition: 300ms;
+    //     transition: 300ms;
+    //   }
+    //   .image-wrapper ul li:before {
+    //     content: "";
+    //     width: 0%;
+    //     height: 2px;
+    //     background: #000;
+    //     position: absolute;
+    //     bottom: 0;
+    //     margin-left: 12.5%;
+    //     -webkit-transition: 300ms;
+    //     transition: 300ms;
+    //     z-index: 2;
+    //   }
+    //   .image-wrapper ul li:first-child {
+    //     opacity: 1;
+    //   }
+    //   .image-wrapper ul li:hover {
+    //     opacity: 1;
+    //   }
+    //   .image-wrapper ul li:hover:before {
+    //     width: 25%;
+    //     margin-left: 0%;
+    //   }
+    //   .image-wrapper ul li picture {
+    //     width: 100%;
+    //     height: 100%;
+    //     position: absolute;
+    //     bottom: 0px;
+    //     left: 0;
+    //     pointer-events: none;
+    //   }
+    // }
+
     .image-section-second {
-      width: 320px;
-      height: auto;
-    }
+          width: 320px;
+          height: 418px;
+          overflow: hidden;
+          position: relative;
+          float: left;
+          // margin: 25px;
+          box-sizing: border-box;
+      }
+    .image-section-second picture {
+        width: 100%;
+      }
+    .image-section-second ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        float: left;
+      }
+    .image-section-second ul li {
+        display: inline-block;
+        width: 25%;
+        height: 420px;
+        opacity: 0;
+        // -webkit-transition: 300ms;
+        transition: 600ms;
+      }
+    .image-section-second ul li:before {
+        content: "";
+        width: 0%;
+        height: 2px;
+        background: #000;
+        position: absolute;
+        bottom: 0;
+        margin-left: 12.5%;
+        -webkit-transition: 300ms;
+        transition: 300ms;
+        z-index: 2;
+      }
+    .image-section-second ul li:first-child {
+        opacity: 1;
+      }
+    .image-section-second ul li:hover {
+        opacity: 1;
+      }
+    .image-section-second ul li:hover:before {
+        width: 25%;
+        margin-left: 0%;
+      }
+    .image-section-second ul li picture {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        pointer-events: none;
+      }
+
     .image-section-second-M {
       display: none;
     }

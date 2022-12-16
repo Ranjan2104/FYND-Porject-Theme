@@ -312,68 +312,6 @@
       padding-left: 25px;
     }
 
-    //   .image-section-second {
-    //     .image-wrapper {
-    //       width: 320px;
-    //       height: 415px;
-    //       overflow: hidden;
-    //       position: relative;
-    //       float: left;
-    //       // margin: 25px;
-    //       box-sizing: border-box;
-    //   }
-    //   .image-wrapper picture {
-    //     width: 100%;
-    //   }
-    //   .image-wrapper ul {
-    //     list-style: none;
-    //     margin: 0;
-    //     padding: 0;
-    //     width: 100%;
-    //     height: 100%;
-    //     position: relative;
-    //     float: left;
-    //   }
-    //   .image-wrapper ul li {
-    //     display: inline-block;
-    //     width: 25%;
-    //     height: 420px;
-    //     opacity: 0;
-    //     -webkit-transition: 300ms;
-    //     transition: 300ms;
-    //   }
-    //   .image-wrapper ul li:before {
-    //     content: "";
-    //     width: 0%;
-    //     height: 2px;
-    //     background: #000;
-    //     position: absolute;
-    //     bottom: 0;
-    //     margin-left: 12.5%;
-    //     -webkit-transition: 300ms;
-    //     transition: 300ms;
-    //     z-index: 2;
-    //   }
-    //   .image-wrapper ul li:first-child {
-    //     opacity: 1;
-    //   }
-    //   .image-wrapper ul li:hover {
-    //     opacity: 1;
-    //   }
-    //   .image-wrapper ul li:hover:before {
-    //     width: 25%;
-    //     margin-left: 0%;
-    //   }
-    //   .image-wrapper ul li picture {
-    //     width: 100%;
-    //     height: 100%;
-    //     position: absolute;
-    //     bottom: 0px;
-    //     left: 0;
-    //     pointer-events: none;
-    //   }
-    // }
-
     .image-section-second {
           width: 320px;
           height: 418px;
@@ -601,7 +539,8 @@ export default {
       slug: this.settings.props.Product.value,
     };
     this.fetchData(option);
-    console.log("texttt", this.settings);
+    console.log("Setting Data", this.settings);
+    // console.log("Context Data------", this.context.blog);
   },
   beforeDestroy() {},
 };

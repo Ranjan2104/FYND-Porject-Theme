@@ -39,6 +39,7 @@
           </sm-button>
       </div>
     </section>
+    <div class="whites100"></div>
   </template> 
 
   <template v-if="settings.props.styleV.value === 'style2'">
@@ -93,6 +94,7 @@
           </sm-button>
       </div>
     </section>
+    <div class="whites100"></div>
   </template>
 
   <template v-if="settings.props.styleV.value === 'style3'">
@@ -139,6 +141,7 @@
           </sm-button>
       </div>
     </section>
+    <div class="whites100"></div>
   </template>
 </div>
 </template>
@@ -570,7 +573,7 @@
   justify-content: space-around;
   font-size: 16px;
   font-weight: 300;
-  padding-left: 125px;
+  padding-left: 115px;
   padding-right: 40px;
   box-sizing: border-box;
   @media @large-1280 {
@@ -721,6 +724,27 @@
   }
 }
 
+.media-with-text3 ,.media-with-text2 ,.media-with-text {
+  position: relative;
+}
+
+.whites100{
+  position: absolute;
+  top:0px;
+  left:0px;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  animation-name: example100;
+  animation-duration: 1.5s;
+  animation-direction:reverse;
+  animation-fill-mode: forwards;
+
+}
+@keyframes example100 {
+  0%   {height:0%;}
+  100% {height:100%;}
+}
 
 </style>
 

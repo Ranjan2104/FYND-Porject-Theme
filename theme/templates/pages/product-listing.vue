@@ -1142,10 +1142,10 @@ export default {
   padding: 8px 0;
   cursor: pointer;
 }
-.fil_tit {
-  // font-weight:bold !important;
-  // font-size:13px !important;
-}
+// .fil_tit {
+//   // font-weight:bold !important;
+//   // font-size:13px !important;
+// }
 
 .filter-arrow-up {
   transform: rotate(180deg);

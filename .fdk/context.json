@@ -1,0 +1,16 @@
+{
+  "theme": {
+    "active_context": "AmreshFinalTheme",
+    "contexts": {
+      "AmreshFinalTheme": {
+        "name": "AmreshFinalTheme",
+        "application_id": "638461d631d64d14c6f17001",
+        "domain": "amresh-dev.hostx1.de",
+        "company_id": 13778,
+        "theme_id": "638476b29a50698126fa77fc",
+        "env": "fyndx1"
+      }
+    }
+  },
+  "partners": {}
+}

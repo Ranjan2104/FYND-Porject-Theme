@@ -515,7 +515,7 @@ export default {
   methods: {
     fetchData(option) {
       this.$apiSDK.catalog.getProductDetailBySlug(option).then((data) => {
-        console.log("data", data);
+        console.log("data from getProductDetailBySlug api", data);
         this.img = [...data.medias];
         console.log("img", this.img);
       });

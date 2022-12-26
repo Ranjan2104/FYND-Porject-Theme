@@ -11,6 +11,7 @@
         {{ settings.props.heading.value }}
       </div>
     </div>
+    <div class="whites100"></div>
   </section>
 </template>
 
@@ -18,8 +19,8 @@
 
 <settings>
 {
-  "name": "product-description2",
-  "label": "Product Description2",
+  "name": "brand-story-section",
+  "label": "Brand Story Section",
   "props": [
     {
       "type": "image_picker",
@@ -130,92 +131,6 @@
     }
   }
 
-  .image-section::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: var(--bg-color);
-    animation: b-ltr-before 1.5s cubic-bezier(0, 0, 0, 0) forwards;
-    background-color: white;
-  }
-  .image-section:nth-of-type(1)::before,
-  .image-section:nth-of-type(1)::after {
-      animation-delay: 0.4s;
-  }
-
-  @keyframes b-ltr-after {
-      0% {
-        transform: translateY(-100%)
-      }
-      10%{
-        transform: translateY(10%)
-      }
-      20%{
-        transform: translateY(20%)
-      }
-      30%{
-        transform: translateY(30%)
-      }
-      40%{
-        transform: translateY(40%)
-      }
-      50%{
-        transform: translateY(50%)
-      }
-      60%{
-        transform: translateY(60%)
-      }
-      70%{
-        transform: translateY(70%)
-      }
-      80%{
-        transform: translateY(80%)
-      }
-      90%{
-        transform: translateY(90%)
-      }
-      100% {
-        transform: translateY(101%)
-      }
-  }
-
-  @keyframes b-ltr-before {
-      0% {
-        transform: translateY(0)
-      }
-      10%{
-        transform: translateY(-20%)
-      }
-      20%{
-        transform: translateY(-40%)
-      }
-      30%{
-        transform: translateY(-60%)
-      }
-      40%{
-        transform: translateY(-80%)
-      }
-      50%{
-        transform: translateY(-100%)
-      }
-      60%{
-        transform: translateY(-120%)
-      }
-      70%{
-        transform: translateY(-140%)
-      }
-      80%{
-        transform: translateY(-160%)
-      }
-      90%{
-        transform: translateY(-180%)
-      }
-      100% {
-        transform: translateY(-200%)
-      }
-  }
-
   &__content {
     align-self: flex-start;
     text-align: left;
@@ -256,95 +171,6 @@
       }
     }
   }
-    // .media-with-text__content div{
-    //   position: relative;
-    // }
-
-  .media-with-text__content div::before {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background: var(--bg-color);
-      animation: a-ltr-before 1s cubic-bezier(0, 0, 0, 0) forwards;
-      background-color: white;
-  }
-  .media-with-text__content div:nth-of-type(1)::before,
-  .media-with-text__content div:nth-of-type(1)::after {
-      animation-delay: 1.5s;
-  }
-
-  @keyframes a-ltr-after {
-      0% {
-        transform: translateY(-100%)
-      }
-      10%{
-        transform: translateY(10%)
-      }
-      20%{
-        transform: translateY(20%)
-      }
-      30%{
-        transform: translateY(30%)
-      }
-      40%{
-        transform: translateY(40%)
-      }
-      50%{
-        transform: translateY(50%)
-      }
-      60%{
-        transform: translateY(60%)
-      }
-      70%{
-        transform: translateY(70%)
-      }
-      80%{
-        transform: translateY(80%)
-      }
-      90%{
-        transform: translateY(90%)
-      }
-      100% {
-        transform: translateY(101%)
-      }
-  }
-
-  @keyframes a-ltr-before {
-      0% {
-        transform: translateY(0)
-      }
-      10%{
-        transform: translateY(-20%)
-      }
-      20%{
-        transform: translateY(-40%)
-      }
-      30%{
-        transform: translateY(-60%)
-      }
-      40%{
-        transform: translateY(-80%)
-      }
-      50%{
-        transform: translateY(-100%)
-      }
-      60%{
-        transform: translateY(-120%)
-      }
-      70%{
-        transform: translateY(-140%)
-      }
-      80%{
-        transform: translateY(-160%)
-      }
-      90%{
-        transform: translateY(-180%)
-      }
-      100% {
-        transform: translateY(-200%)
-      }
-  }
 }
 
 .mirror-on {
@@ -368,6 +194,25 @@
         }
       }
   }
+}
+.media-with-text {
+    position: relative;
+}
+.whites100{
+  position: absolute;
+  top:0px;
+  left:0px;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  animation-name: example100;
+  animation-duration: 1.5s;
+  animation-direction:reverse;
+  animation-fill-mode: forwards;
+}
+@keyframes example100 {
+  0%   {height:0%;}
+  100% {height:100%;}
 }
 
 </style>

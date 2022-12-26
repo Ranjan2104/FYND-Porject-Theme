@@ -62,11 +62,11 @@
 }
 
 .overlay {
-  position: absolute;
+  // position: relative;
   top: 30%;
   left: 50%;
   width: 100%;
-  transform: translate(-50%, -50%);
+  // transform: translate(-50%, -50%);
   // display: flex;
   &__image {
     display: none;
@@ -74,7 +74,7 @@
     margin-bottom: 10px;
     @media @mobile {
       display: flex;
-      height: 400px;
+      // height: 400px;
     }
   }
 }

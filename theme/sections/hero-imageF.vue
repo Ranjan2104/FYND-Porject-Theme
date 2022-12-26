@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mainSection">
     <fdk-link :link="settings.props.button_link.value">
       <emerge-img
         v-if="settings.props.image.value"
@@ -18,6 +18,7 @@
         </div>
       </div>
     </fdk-link>
+    <div class="whites100"></div>
   </div>
 </template>
 <!-- #region  -->
@@ -59,39 +60,6 @@
     }
   }
 }
-.hero__image::before {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: var(--bg-color);
-  animation: b-ltr-before 1.5s cubic-bezier(0, 0, 0, 0) forwards;
-  background-color: white;
-}
-.hero__image:nth-of-type(1)::before,
-.hero__image:nth-of-type(1)::after {
-    animation-delay: 0.5s;
-}
-
-@keyframes b-ltr-after {
-    0% {
-        transform: translateY(-100%)
-    }
-
-    100% {
-        transform: translateY(101%)
-    }
-}
-
-@keyframes b-ltr-before {
-    0% {
-        transform: translateY(0)
-    }
-
-    100% {
-        transform: translateY(-200%)
-    }
-}
 
 .overlay {
   position: absolute;
@@ -110,39 +78,26 @@
     }
   }
 }
-.overlay::before {
-  content: '';
+.mainSection {
+    position: relative;
+}
+.whites100{
   position: absolute;
+  top:0px;
+  left:0px;
   width: 100%;
   height: 100%;
-  background: var(--bg-color);
-  animation: b-ltr-before 1.5s cubic-bezier(0, 0, 0, 0) forwards;
   background-color: white;
+  animation-name: example100;
+  animation-duration: 1.5s;
+  animation-direction:reverse;
+  animation-fill-mode: forwards;
 }
-.overlay:nth-of-type(1)::before,
-.overlay:nth-of-type(1)::after {
-    animation-delay: 0.5s;
-}
-
-@keyframes b-ltr-after {
-    0% {
-        transform: translateY(-100%)
-    }
-
-    100% {
-        transform: translateY(101%)
-    }
+@keyframes example100 {
+  0%   {height:0%;}
+  100% {height:100%;}
 }
 
-@keyframes b-ltr-before {
-    0% {
-        transform: translateY(0)
-    }
-
-    100% {
-        transform: translateY(-200%)
-    }
-}
 </style>
 
 <script>

@@ -142,6 +142,7 @@
   .image-section-second-M {
     display: none;
   }
+
   @media screen and (max-width: 768px) {
     flex-direction: row-reverse;
     padding-right: 90px;
@@ -428,7 +429,6 @@
 .mirror-on {
   flex-direction: row-reverse;
   padding-right: 329px;
-
   .image-section-first-M {
     display: flex;
     width: 426px;
@@ -439,18 +439,75 @@
   .image-section-second {
     display: none;
   }
-  .image-section-second-M {
-    display: flex;
-    width: 550px;
-    align-self: baseline;
-  }
+
+  // animation part for mirror on
+    .image-section-second-M {
+      display: flex;
+      width: 550px;
+      align-self: baseline;
+      height: 690px;
+      overflow: hidden;
+      position: relative;
+      float: left;
+      box-sizing: border-box;
+    }
+    .image-section-second-M picture {
+        width: 100%;
+      }
+    .image-section-second-M ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        float: left;
+      }
+    .image-section-second-M ul li {
+        display: inline-block;
+        width: 16.5%;
+        height: 690px;
+        opacity: 0;
+        // -webkit-transition: 300ms;
+        transition: 600ms;
+      }
+    .image-section-second-M ul li:before {
+        content: "";
+        width: 0%;
+        height: 2px;
+        background: #000;
+        position: absolute;
+        bottom: 0;
+        margin-left: 12.5%;
+        -webkit-transition: 300ms;
+        transition: 300ms;
+        z-index: 2;
+      }
+    .image-section-second-M ul li:first-child {
+        opacity: 1;
+      }
+    .image-section-second-M ul li:hover {
+        opacity: 1;
+      }
+    .image-section-second-M ul li:hover:before {
+        width: 25%;
+        margin-left: 0%;
+      }
+    .image-section-second-M ul li picture {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        pointer-events: none;
+      }
+
   .media-with-text__content--main {
     width: 369px;
   }
   .media-with-text__content--sub {
     width: 437px;
   }
-
   @media screen and (max-width: 768px) {
     flex-direction: row;
     padding-right: 0px;
@@ -469,7 +526,16 @@
       display: flex;
       width: 261px;
       align-self: baseline;
+      height: 359px;
     }
+    .image-section-second-M ul li {
+        display: inline-block;
+        width: 25%;
+        height: 359px;
+        opacity: 0;
+        // -webkit-transition: 300ms;
+        transition: 600ms;
+      }
     .media-with-text__content--main {
       width: 330px;
     }

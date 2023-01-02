@@ -103,7 +103,12 @@
           ></product-variants>
           <fdk-pdp-size-stores class="product__size" ref="sizeContainer">
             <template slot-scope="sellerData">
-              <p class="product__size--text">Size</p>
+              <div style="display:flex">
+                <div><p class="product__size--text">Size {{ selectedSize }}</p> </div>
+                  <div v-if="selectedSize">
+                    <p>(Selected)</p>
+                  </div>
+              </div>
               <ul class="size-list">
                 <li
                   v-for="(size, index) in context.product_meta.sizes"
@@ -119,7 +124,7 @@
                     sizeError = false;
                   "
                 >
-                  <p>{{ size.display }}</p>
+                  <p>{{ size.display }} </p>
                 </li>
               </ul>
               <div

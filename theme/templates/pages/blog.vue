@@ -4,7 +4,6 @@
         <div class="blogHeading">
           <p>Our Blog</p>
         </div>
-        <div class="searchBar"></div>
       </div>
       <div class="content2">
         <div class="section1">
@@ -33,6 +32,25 @@
       </div>
     </div>
 </template>
+
+<settings>
+{
+  "props": [
+    {
+      "type": "text",
+      "id": "textH",
+      "default": "",
+      "label": "Blog Page Heading"
+    },
+    {
+      "type": "textarea",
+      "id": "textD",
+      "default": "",
+      "label": "Blog Page Description"
+    }
+  ]
+}
+</settings>
 
 <style lang="less" scoped>
 .content1 {
@@ -119,7 +137,7 @@
       }
       @media screen and (max-width: 768px) {
         width: 378px;
-        height: 75px;
+        height: 99px;
         p {
           font-size: 20px;
           line-height: 24px;
@@ -127,7 +145,7 @@
       }
       @media screen and (max-width: 480px) {
         width: 288px;
-        height: 70px;
+        height: 95px;
         p {
           font-size: 20px;
           line-height: 24px;
@@ -259,7 +277,7 @@
         width: 212px; 
         height: 119px;
       }
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: 480px) {
         width: 136px; 
         height: 76px;
       }
@@ -299,14 +317,15 @@
   @media screen and (max-width: 480px) {
     display: flex;
     flex-direction: column;
-    // padding-top: 32px;
+    // gap: 0px;
+    padding-top: 0px;
   }
 }
 </style>
 
 <script>
 export default  {
-    props:["context"],
+    props:["context", "settings","page_config"],
     data() {
       return {
         data: []
@@ -318,8 +337,14 @@ export default  {
         this.data.push(this.context.blogs[i]);
       }
       console.log("Blogs Data", this.context.blogs);
+    },
+    page_config: function() {
+      console.log("Setting Data from watch", this.page_config);
     }
-  } 
+  },
+  mounted() {
+    console.log("Setting Data from mounted", this.page_config);
+  }
 }
 </script>
 

@@ -30,6 +30,15 @@
             }
           },
           "page": "cart-landing"
+        },
+        {
+          "page": "blog",
+          "settings": {
+            "props": {
+              "textD": "6666666666",
+              "textH": "5555"
+            }
+          }
         }
       ],
       "global_config": {

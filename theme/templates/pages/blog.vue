@@ -1,36 +1,46 @@
 <template>
-    <div>
-      <div class="content1">
-        <div class="blogHeading">
-          <p>Our Blog</p>
-        </div>
+  <div>
+    <div class="content1">
+      <div class="blogHeading">
+        <p>Our Blog</p>
       </div>
-      <div class="content2">
-        <div class="section1">
+    </div>
+    <div class="content2">
+      <fdk-link :link= "`/blog/${context.blogs[0].slug}`" :title="context.blogs[0].title">
+        <div class="section1">  
           <img :src="context.blogs[0].feature_image.secure_url" />
           <div class="section1-text">
             <div class="section1-text-block"><p>Apparel Supplychain</p></div>
             <p>{{ context.blogs[0].title }}</p>
           </div>
         </div>
-        <div class="section2">
+      </fdk-link>
+      <div class="section2">
+        <fdk-link :link= "`/blog/${context.blogs[1].slug}`" :title="context.blogs[1].title">
           <div class="subSection1">
             <img :src="context.blogs[1].feature_image.secure_url" />
             <div class="section2-text"><p>{{ context.blogs[1].title }}</p></div>
           </div>
+        </fdk-link>
+        <fdk-link :link= "`/blog/${context.blogs[2].slug}`" :title="context.blogs[2].title">
           <div class="subSection2">
             <img :src="context.blogs[2].feature_image.secure_url" />
             <div class="section2-text2"><p>{{ context.blogs[2].title }}</p></div>
           </div>
-        </div>
-      </div>
-      <div class="content3"> 
-        <div class="column" v-for="(items, i) in this.data" :key="i">
-          <img :src="data[i].feature_image.secure_url" />
-          <div class="sub-col-title"><p>{{ data[i].title}}</p></div>                       
-        </div>
+        </fdk-link>
       </div>
     </div>
+    <div class="content3">
+      <div v-for="(items, i) in context.blogs.slice(3)" :key="i">
+        <fdk-link :link= "`/blog/${data[i].slug}`" :title="data[i].title">
+          <div class="column">
+            <img :src="data[i].feature_image.secure_url" />
+            <div class="sub-col-title"><p>{{ data[i].title}}</p></div>
+          </div> 
+        </fdk-link>
+      </div>
+    </div>
+  </div>
 </template>
 
 <settings>
@@ -328,21 +338,32 @@ export default  {
     props:["context", "settings","page_config"],
     data() {
       return {
-        data: []
+        data: [],
+        items: []
       }
     },
+    methods: {
+    fetchData() {
+        this.$apiSDK.content.getBlogs({pageNo : 1 ,pageSize : 10}).then((data) => {
+          console.log("dataaaaaaaaaaaa", data);
+        this.items = data.items;
+        console.log("Items+++++++++++", this.items);
+      });
+    }
+  },
     watch: {
     context: function() {
       for(let i = 3; i < this.context.blogs.length; i++) {
         this.data.push(this.context.blogs[i]);
       }
-      console.log("Blogs Data", this.context.blogs);
-    },
-    page_config: function() {
-      console.log("Setting Data from watch", this.page_config);
+      console.log("Blogs Data", this.context);
     }
+    // page_config: function() {
+    //   console.log("Setting Data from watch", this.page_config);
+    // }
   },
   mounted() {
+    this.fetchData();
     console.log("Setting Data from mounted", this.page_config);
   }
 }

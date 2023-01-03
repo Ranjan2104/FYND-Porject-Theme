@@ -7,7 +7,7 @@
       class="product-desc-container"
       v-if="context && context.product && context.product.medias"
     >
-      <div class="left">
+      <div class="left">  
         <image-gallery :images="getMedias" v-on:paint-canvas="showPreview" />
       </div>
       <div class="right">

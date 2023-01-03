@@ -40,13 +40,13 @@
       "type": "text",
       "id": "textH",
       "default": "",
-      "label": "Blog Page Heading"
+      "label": "Heading"
     },
     {
       "type": "textarea",
       "id": "textD",
       "default": "",
-      "label": "Blog Page Description"
+      "label": "Subheading"
     }
   ]
 }

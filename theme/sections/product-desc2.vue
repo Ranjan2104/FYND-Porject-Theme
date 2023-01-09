@@ -107,17 +107,10 @@
     max-width: 100%;
     height: auto;
     img {
-        width: 752px;
-        height: 1002px;
-
-      @media screen and (max-width: 768px) {
-        width: 326px;
-        height: 434px;
-      }
-      @media @mobile {
-        width: 320px;
-        height: 426px;
-      }
+      width: 100%;
+      height: auto;
+      aspect-ratio: 3/4;
+      object-fit: cover;
     }
     @media screen and (max-width: 768px) {
         flex: 0 0 50%;
